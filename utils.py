@@ -167,6 +167,7 @@ class VisualizeTestSet(Callback):
         self.val_ds.reset_state()
 
     def _trigger(self):
+        print('Hello World!')
         idx = 0
         for iA, iB in self.val_ds.get_data():
             vizA, vizB = self.pred(iA, iB)
