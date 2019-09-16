@@ -123,7 +123,7 @@ def get_celebA_data(datadir):
     return df
 
 
-def get_data(datadir, isTrain=False):
+def get_data(datadir, isTrain=True):
     if isTrain:
         resize_range = (0.9, 1.1)
         augs = [
