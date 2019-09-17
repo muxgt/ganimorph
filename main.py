@@ -32,11 +32,12 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     '--data', required=True,
     help='the img_align_celeba directory. should also contain list_attr_celeba.txt')
-parser.add_argument('--load', help='load model')
+parser.add_argument('--load', help='folder from which to load model')
+parser.add_argument('--ckpt_dir', help='folder to save model')
 args = parser.parse_args()
 
 if __name__ == '__main__':
-    logger.auto_set_dir()
+    logger.set_logger_dir(args.ckpt_dir, acition = "k")
     data = get_data(args.data)
     data = QueueInput(data)
     # train 1 D after 2 G
