@@ -48,7 +48,7 @@ if __name__ == '__main__':
             ScheduledHyperParamSetter(
                                 'learning_rate',
                                 [(150, 2e-4), (300, 0)], interp='linear')],
-        steps_per_epoch=0,
+        steps_per_epoch=1000,
         session_init=SaverRestore(args.load) if args.load else None
     )
     #SeparateGANTrainer(config, 2).train()
